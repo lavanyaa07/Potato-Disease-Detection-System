@@ -1,7 +1,10 @@
-.vscode
-.pycharm
-__pycache__
-.idea
-.ipynb_checkpoints
-models.config
-PlantVillage/
+VIVA.md
+RUN.md
+test_predictions.py
+test_images_from_internet/healthy_leaf2.jpg
+frontend/build/
+frontend/node_modules/
+venv/
+venv310/
+api/__pycache__/
+training/.ipynb_checkpoints/

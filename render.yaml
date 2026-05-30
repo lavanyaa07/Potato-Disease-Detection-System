@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: agrivision-ai-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: ALLOWED_ORIGINS
+        # Update this after you deploy the frontend to Vercel
+        value: "http://localhost:3000,https://agrivision-ai.vercel.app"
+    healthCheckPath: /health
+    autoDeploy: true

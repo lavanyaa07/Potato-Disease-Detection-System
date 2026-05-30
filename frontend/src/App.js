@@ -1,7 +1,7 @@
-import { ImageUpload } from "./home";
+import HomeApp from "./home";
 
 function App() {
-  return <ImageUpload />;
+  return <HomeApp />;
 }
 
 export default App;
