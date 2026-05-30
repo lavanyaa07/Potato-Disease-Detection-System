@@ -36,7 +36,17 @@ app.add_middleware(
 # ── Model Loading ──────────────────────────────────────────────────────────────
 # Resolve model path relative to this file so it works from any working directory
 BASE_DIR = Path(__file__).resolve().parent
+
+# Local development
 MODEL_PATH = BASE_DIR.parent / "potatoes.h5"
+
+# Render Docker deployment
+if not MODEL_PATH.exists():
+    MODEL_PATH = Path("/potatoes.h5")
+
+if not MODEL_PATH.exists():
+    print(f"[ERROR] Model not found: {MODEL_PATH}", file=sys.stderr)
+    sys.exit(1)
 
 if not MODEL_PATH.exists():
     # Fallback: look for SavedModel format
